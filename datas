@@ -1,4 +1,28 @@
-nombre = input()
-apellido = input()
-mes_nac = input()
-dia_nac = input ()
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
+# basado en http://comunicacionmaquina.blogspot.cl/2015/07/como-crear-una-base-de-datos-sqlite3.html
+
+# usar sqlite3
+import sqlite3
+
+# crea o abre base de datos "prueba.db"
+conexion = sqlite3.connect('prueba.db')
+conexion.text_factory = str
+c =conexion.cursor()
+
+
+# rutina en Python entrar datos
+print("Ingrese los datos")
+apellido = (input("Escriba el apellido:"))
+apellido = apellido.lower()
+nombre = (input("Escriba el nombre:"))
+nombre = nombre.lower()
+mes_nac = int(input("Escriba el numero del mes de nacimiento:"))
+dia_nac = int(input("Escriba el día del nacimiento:"))
+anio_nac =int(input("Escriba el año de nacimiento:"))
+edad = 2017-anio_nac
+sexo = input("Sexo H(hombre), M(mujer)u O(Otro)"))
+grado_max =input("Grado D(Doctor), M(Magíster), L(Licenciado) u O (Otro)"))
+print(apellido, nombre, dia_nac, "de", mes_nac, "tiene ", edad, "años de edad.")
